@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>关于乱数的定义和看法</title>
+      <link href="/posts/6085f10a/"/>
+      <url>/posts/6085f10a/</url>
+      
+        <content type="html"><![CDATA[<p>本文章分为两部分</p><ol><li><a href="#定义">客观的乱数定义</a></li><li><a href="#个人看法">个人主观的看法</a></li></ol><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><code>乱数</code>，也叫<code>随机数</code>，这个词不仅局限于宝可梦游戏中，还存在日常生活、科学研究、计算机编程等领域，随机数都有广泛的应用。举个例子：比如有些网站的登录需要验证码，这一般是随机的。</p><p>而<code>随机数</code>也分<code>真随机</code>和<code>伪随机</code>，<del>如果是计算机专业的同学对伪随机数一定有所了解</del>。是的，只要是通过算法产生的随机数都是<code>伪随机数</code>。而自然界发生的事情一般认为是<code>真随机数</code>（不过学术界对此也有很大争议，感兴趣的小伙伴可以自行了解）。</p><p>在宝可梦游戏中，所有的数值生成都是有相应算法的，也就是<code>伪随机数</code>。所以我们说的<code>乱数操作</code>，其实就是利用这些<code>伪随机数</code>算法，在特定的时机下，使算法的结果变成我们想要的。</p><p>那么这些算法都是从何而来？游戏官方一般是不会把算法公开的，因此算法的由来一般有两个渠道。</p><ul><li>破解游戏从而得出来的</li><li>通过游戏中发现的一些现象推出的规律</li></ul><p>因此<code>乱数操作</code>大部分无疑是使用了非官方的手段进行游戏，当然这并不是绝对的，也有玩家是只靠后者进行操作。</p><div class="note warning simple"><p><code>乱数操作</code>与利用外部程序修改游戏记录或使用金手指有本质区别，具体区别可参考如下表：</p></div><div class="table-container"><table><thead><tr><th style="text-align:center">对比内容</th><th style="text-align:center"><strong>乱数操作</strong></th><th style="text-align:center"><strong>利用外部程序修改游戏记录</strong></th></tr></thead><tbody><tr><td style="text-align:center"><strong>前置条件</strong></td><td style="text-align:center">可使用第三方软件逆向游戏算法数据，部分机制也可仅通过表象总结规律</td><td style="text-align:center">需使用第三方软件逆向游戏算法数据</td></tr><tr><td style="text-align:center"><strong>操作过程</strong></td><td style="text-align:center">无需第三方软件对游戏数据进行修改，但也可使用第三方软件对游戏数据进行查看监控</td><td style="text-align:center">需使用第三方软件对游戏记录进行直接修改</td></tr><tr><td style="text-align:center"><strong>操作结果</strong></td><td style="text-align:center">数据为游戏随机运行时可正常生成的数据</td><td style="text-align:center">数据可能出现游戏运行时无法生成的数据</td></tr></tbody></table></div><p>关于乱数操作结果的<code>合法性</code>，很多没接触过或者刚接触的朋友对此会有疑问。除了利用官方漏洞的乱数操作以外，所有的乱数操作获得的结果均是100%合法的。</p><h2 id="个人看法"><a href="#个人看法" class="headerlink" title="个人看法"></a>个人看法</h2><div class="note warning simple"><p>以下的内容均为个人主观观点，希望各位看官彼此尊重，求同存异。</p></div><p>总的来说乱数操作也分为四大类</p><ol><li>纯实机操作不借助任何第三方工具</li><li>纯实机操作，参考第三方工具对照</li><li>实机破解看数据+第三方工具对照</li><li>模拟器操作</li></ol><p>以上四类的操作，1、2接近于走捷径，3、4则有点作弊的感觉。</p><p>但是不管是哪一类乱数操作，都是与<code>魔法修改、使用金手指</code>等操作有本质区别。乱数操作下的宝可梦是可以保证99%合法性的（剩下1%是官方漏洞等）。</p><p>不过对于作弊一词每个人定义都不同，这是一个很有争议的话题。如果非要说借助了第三方的乱数操作就是作弊，那么使用所有非官方的资料、攻略都应该算为作弊！包括借助第三方改造硬件的机器进行刷闪。</p><h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>其实所有游戏理论上也都是可以进行乱数操作的，只不过宝可梦游戏的算法大部分刚好是对应一些时间相关的，因此才有宝可梦乱数一说。其实隔壁战旗游戏火焰纹章也有乱数操作的。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 宝可梦乱数 </tag>
+            
+            <tag> PokemonRNG </tag>
+            
+            <tag> 宝可梦 </tag>
+            
+            <tag> 随机数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>置顶/待办</title>
+      <link href="/posts/ce9bf612/"/>
+      <url>/posts/ce9bf612/</url>
+      
+        <content type="html"><![CDATA[<h2 id="置顶"><a href="#置顶" class="headerlink" title="置顶"></a>置顶</h2><p>暂无</p><hr><h2 id="待办"><a href="#待办" class="headerlink" title="待办"></a>待办</h2><h3 id="Pokemon"><a href="#Pokemon" class="headerlink" title="Pokemon"></a>Pokemon</h3><h4 id="RNG乱数教程"><a href="#RNG乱数教程" class="headerlink" title="RNG乱数教程"></a>RNG乱数教程</h4><h5 id="第三世代"><a href="#第三世代" class="headerlink" title="第三世代"></a>第三世代</h5><ul><li>[ ] 主系列五部曲  </li><li>[ ] 竞技场外传  <h5 id="第四世代"><a href="#第四世代" class="headerlink" title="第四世代"></a>第四世代</h5></li><li>[ ] 心金魂银</li><li>[ ] DPPT<h5 id="第五世代"><a href="#第五世代" class="headerlink" title="第五世代"></a>第五世代</h5></li><li>[ ] 黑白1</li><li>[ ] 黑白2<h5 id="第六世代"><a href="#第六世代" class="headerlink" title="第六世代"></a>第六世代</h5></li><li>[ ] XY</li><li>[ ] ORAS<h5 id="第七世代"><a href="#第七世代" class="headerlink" title="第七世代"></a>第七世代</h5></li><li>[ ] SM</li><li>[ ] USUM<h5 id="第八世代"><a href="#第八世代" class="headerlink" title="第八世代"></a>第八世代</h5></li><li>[ ] SW</li><li>[ ] BDSP<h4 id="缎带进度"><a href="#缎带进度" class="headerlink" title="缎带进度"></a>缎带进度</h4></li></ul><p>每个地区三只</p><h5 id="关东地区"><a href="#关东地区" class="headerlink" title="关东地区"></a>关东地区</h5><ul><li>[ ] 水箭龟<h5 id="成都地区"><a href="#成都地区" class="headerlink" title="成都地区"></a>成都地区</h5></li><li>[ ] 幸福蛋</li><li>[ ] 太阳伊布</li><li>[ ] 天蝎王-&gt;四代<h5 id="丰缘地区"><a href="#丰缘地区" class="headerlink" title="丰缘地区"></a>丰缘地区</h5></li><li>[ ] 火焰鸡</li><li>[ ] 优雅猫</li><li>[ ] 沙奈朵</li><li>[ ] 阿伯俊鲁</li><li>[ ] 斗笠菇<h5 id="神奥地区"><a href="#神奥地区" class="headerlink" title="神奥地区"></a>神奥地区</h5></li><li>[ ] 路卡利欧</li><li>[ ] 伦琴猫</li><li>[ ] 土台龟<h5 id="合众地区"><a href="#合众地区" class="headerlink" title="合众地区"></a>合众地区</h5><h5 id="卡洛斯地区"><a href="#卡洛斯地区" class="headerlink" title="卡洛斯地区"></a>卡洛斯地区</h5><h5 id="阿罗拉地区"><a href="#阿罗拉地区" class="headerlink" title="阿罗拉地区"></a>阿罗拉地区</h5><h5 id="伽勒尔地区"><a href="#伽勒尔地区" class="headerlink" title="伽勒尔地区"></a>伽勒尔地区</h5><h5 id="帕底亚地区"><a href="#帕底亚地区" class="headerlink" title="帕底亚地区"></a>帕底亚地区</h5></li></ul><hr><h3 id="Minecraft"><a href="#Minecraft" class="headerlink" title="Minecraft"></a>Minecraft</h3><p>一周两个建筑，一共一百个建筑，大概一年左右？</p><ul><li>目前进度7%</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 必看 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
