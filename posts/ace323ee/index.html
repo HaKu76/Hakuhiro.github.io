@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><div id="myscoll"></div><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>宝可梦第四世代乱数操作指南 | 自然公園の精神时光屋</title><meta name="author" content="Hakuhiro"><meta name="copyright" content="Hakuhiro"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="宝可梦第四世代乱数操作指南">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宝可梦第四世代乱数操作指南">
+<meta property="og:url" content="http://haku76.github.io/posts/ace323ee/index.html">
+<meta property="og:site_name" content="自然公園の精神时光屋">
+<meta property="og:description" content="宝可梦第四世代乱数操作指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://haku76.github.io/assets/head.jpg">
+<meta property="article:published_time" content="2024-04-02T06:39:54.000Z">
+<meta property="article:modified_time" content="2024-04-10T04:33:21.522Z">
+<meta property="article:author" content="Hakuhiro">
+<meta property="article:tag" content="宝可梦乱数">
+<meta property="article:tag" content="PokemonRNG">
+<meta property="article:tag" content="宝可梦">
+<meta property="article:tag" content="随机数">
+<meta property="article:tag" content="GEN4">
+<meta property="article:tag" content="心金魂银">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://haku76.github.io/assets/head.jpg"><link rel="shortcut icon" href="/favicon.png"><link rel="canonical" href="http://haku76.github.io/posts/ace323ee/index.html"><link rel="preconnect" href="//cdnjs.cloudflare.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":false,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Hakuhiro","link":"链接: ","source":"来源: 自然公園の精神时光屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  infinitegrid: {
+    js: 'https://cdnjs.cloudflare.com/ajax/libs/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '宝可梦第四世代乱数操作指南',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-10 12:33:21'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><link rel="stylesheet" href="/css/progress.css"><link rel="stylesheet" href="/css/setting.css"><style id="settingStyle"></style><style id="css"></style><style id="themeColor"></style><style id="defineBg"></style><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/assets/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-house"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book-tanakh"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-layer-group"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-toolbox"></i><span> 百宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/box/image/"><i class="fa-fw far fa-image"></i><span> 图库</span></a></li><li><a class="site-page child" href="/box/nav/"><i class="fa-fw fas fa-globe"></i><span> 网址导航</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw far fa-message"></i><span> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-user-group"></i><span> 友情链接</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-passport"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw fas fa-hourglass-start"></i><span> 更新记录</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw far fa-address-card"></i><span> 个人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/secret/"><i class="fa-fw fas fa-clover"></i><span> 秘密基地</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于本人</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="自然公園の精神时光屋"><img class="site-icon" src="/favicon.png"/><span class="site-name">自然公園の精神时光屋</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-house"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book-tanakh"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-layer-group"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-toolbox"></i><span> 百宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/box/image/"><i class="fa-fw far fa-image"></i><span> 图库</span></a></li><li><a class="site-page child" href="/box/nav/"><i class="fa-fw fas fa-globe"></i><span> 网址导航</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw far fa-message"></i><span> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-user-group"></i><span> 友情链接</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-passport"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/update/"><i class="fa-fw fas fa-hourglass-start"></i><span> 更新记录</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw far fa-address-card"></i><span> 个人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/secret/"><i class="fa-fw fas fa-clover"></i><span> 秘密基地</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于本人</span></a></li></ul></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-magnifying-glass fa-lg"></i></a></div><a class="sun_moon faa-parent animated-hover" onclick="switchNightMode()" title="浅色和深色模式转换" id="nightmode-button"><svg class="faa-tada" style="height:25px;width:25px;fill:currentColor;position:relative;top:7px" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon">       </use></svg></a><div id="toggle-menu"><a><i class="fas fa-bars fa-lg"></i></a></div></div></div></nav><div id="post-info"><h1 class="post-title">宝可梦第四世代乱数操作指南</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-02T06:39:54.000Z" title="发表于 2024-04-02 14:39:54">2024-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-10T04:33:21.522Z" title="更新于 2024-04-10 12:33:21">2024-04-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="宝可梦第四世代乱数操作指南"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ul>
+<li><h3 id="前言和准备工作"><a href="#前言和准备工作" class="headerlink" title="前言和准备工作"></a>前言和准备工作</h3><h4 id="前言部分"><a href="#前言部分" class="headerlink" title="前言部分"></a>前言部分</h4><ul>
+<li><a href="/posts/6085f10a/" title="关于乱数的定义和看法">关于乱数更广泛的定义请阅读此文章</a></li>
+<li>第四世代的Seed生成机制和机子的日期和时间息息相关。内部算法是将日期和时间进行一些计算，最后得出一个的Seed。而我们需要操作的<strong>第一个关键点</strong>就是获取目标Seed。</li>
+<li>在第四世代同样有着帧数的机制，但不同于三代的是，第四世代的帧数推进变得更容易控制。在游戏中自然推进帧数一般是场景的变换和NPC的移动等等。而我们需要操作的<strong>第二个关键点</strong>就是推进到目标帧。</li>
+<li>另外你还需要了解到一些乱数的术语:<br>Seed：种子，是我们所有参数生成的基础，可以确定延迟和帧数。<br>Delay：延迟，游戏从启动到加载完毕所花费的一些时间，转为一些方便记录且可确定的数值。<br>Frame/Advances：帧数，游戏中会根据一些特别的触发事件而增加。</li>
+<li>本文章请搭配本人的实操视频教程食用，效果更佳<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wh4y1z7dc" title="B站视频链接">B站视频链接</a></li>
+</ul>
+<hr>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li>需要的软件有<ol>
+<li>生成器 PokeFinder或RNGReporter</li>
+<li>计时器 EonTimer3.0</li>
+</ol>
+</li>
+<li>需要的硬件有<ol>
+<li>机子分为这三大类:NDS或NDSL、NDSI系列、3DS系列。<strong>建议使用NDS或NDSL</strong>，不要用别的机子浪费时间。</li>
+<li>所有语言全版本<strong>正版</strong>的宝可梦四代游戏卡带，心金魂银、珍珠钻石白金。</li>
+</ol>
+</li>
+<li>其他<br>一些用来记录参数的工具，可以是Excel、记事本、计算器，甚至是纸和笔。</li>
+</ul>
+<p><strong>个人整理的软件包(侵权删)</strong> <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1npBYmzV9GnvEWtHYKblqhg?pwd=HAKU" title="提取码HAKU">百度网盘</a></p>
+<div class="note warning simple"><p>本文章使用PokeFinder，游戏画面均为内录实机画面，非模拟器！</p>
+</div></li>
+<li><h3 id="第一部分-TID-SID-表里ID"><a href="#第一部分-TID-SID-表里ID" class="headerlink" title="第一部分 TID/SID (表里ID)"></a>第一部分 TID/SID (表里ID)</h3><p><strong>如果你不通过一些特殊手段获得到SID（里ID），那么这部分将是必要的。</strong></p>
+<div class="note warning simple"><p>乱数ID前务必删除游戏存档，组合键为↑+B+SELECT</p>
+</div>
+<h4 id="第一步-获取你想要ID的Seed"><a href="#第一步-获取你想要ID的Seed" class="headerlink" title="第一步 获取你想要ID的Seed"></a>第一步 获取你想要ID的Seed</h4><ul>
+<li>PokeFinder请在Gen 4选项卡下打开IDs</li>
+<li>RNG Reporter请在4th Gen Tools选项栏下选择ID\SID Manipulation  </li>
+</ul>
+<p><img src="/assets/post/003/001.png" alt="Finder的IDs" title="Finder的IDs"></p>
+<ul>
+<li>Searcher部分下<br><code>Year：</code>选择喜欢的年份<br><code>Min Delay：</code>Delay的最小范围，建议5000+<br><code>Max Delay：</code>Delay的最大范围<br><code>Infinite Search：</code>无限地搜索，即忽略Delay最大范围不停的搜索<br><code>Filters：</code>这是筛选的选项卡，你可以在里面填入多个不同需要筛选的数值，只需要每个数值换行即可(如图所示)这里面的筛选项就不多解释了，分别是表ID、里ID、表里ID、宝可梦ID、闪值。<blockquote>
+<p>参数设置完毕后点击<code>Search</code>即可开始搜索Seed，点击<code>Cancel</code>则取消搜索<br>然后点击选择你想要ID组合的Seed，Ctrl+C复制  </p>
+</blockquote>
+</li>
+</ul>
+<h4 id="第二步-获取Seed的生成时间"><a href="#第二步-获取Seed的生成时间" class="headerlink" title="第二步 获取Seed的生成时间"></a>第二步 获取Seed的生成时间</h4><ul>
+<li>PokeFinder请在Gen 4 Tools下选择Seed to Time</li>
+<li>RNG Reporter请在4th Gen Tools选项栏下选择Seed to Time</li>
+</ul>
+<p><img src="/assets/post/003/002.png" alt="Finder的Seed to Time" title="Finder的Seed to Time"></p>
+<p>先选择对应游戏的选项卡，钻石珍珠白金=DPPt，心金魂银=HGSS。</p>
+<blockquote>
+<p>HGSS比DPPt多了REL的勾选，这是雷公炎帝水都的游走选项，暂时不用勾选。</p>
+</blockquote>
+<p><code>Seed：</code>刚才选择的Seed复制后粘贴过来<br><code>Year：</code>选择喜欢的年份即可，注意别设置到游戏发售前的年份了…<br><code>Second：</code>这是设置时间的秒数筛选，勾选并填写秒数（0~59）即可筛选<br>这三个参数填写完点击Search里的Generate生成时间，然后选择其中一个来设置计时器和机子参数。</p>
+<h4 id="第三步-尝试击中目标"><a href="#第三步-尝试击中目标" class="headerlink" title="第三步 尝试击中目标"></a>第三步 尝试击中目标</h4><p>我们需要先对计时器和机子的相关参数进行设置</p>
+<p><img src="/assets/post/003/003.png" alt="EonTimer计时器" title="EonTimer计时器"></p>
+<p>计时器先选择4的选项卡，然后设置参数<br><code>Calibrated Delay：</code>校准Delay，只需要填入默认的初始值即可，HGSS填入490，DPPt填入600。<br><code>Calibrated Second：</code>校准秒数，默认即可不用改动。<br><code>Target Delay：</code>目标Delay，填入Seed to Time中所选时间后的Date/Time(如果是Reporter则是Delay)<br><code>Target Second：</code>目标秒数，按照Seed to Time中所选时间的秒数填入即可<br><code>Minutes Before Target：</code>击中目标需要提前的分钟数，和设置机子的时分有关，后面的数字是多少，机子设置时分就需要减少多少分钟。</p>
+<blockquote>
+<p><strong>注意！仅在HGSS中进行ID乱数操作时，计时器目标秒数设置需要-3，例如我选择的时间是59秒，则计时器中目标秒数应设置56，因此请不要选择小于3秒的时间！</strong></p>
+</blockquote>
+<p>接着设置机子的时间<br>年份日期按照Seed to Time中所选的设置即可</p>
+<blockquote>
+<p><strong>注意！时分的设置需要注意计时器中Minutes Before Target后的数字。例如我选择时间为9:00，计时器Minutes Before Target后的数字是1，那么我机子设置时间应该减1分钟，即设置8:59。同理如果Minutes Before Target后的数字是0则就不需要设置时减分钟。</strong></p>
+</blockquote>
+<p>时分设置完毕后先别着急按下A确定</p>
+<p>计时器和机子参数都设置完毕后，同时按下计时器的Start和机子的A确认设置时间，然后连续按下按键BBA关机并重启机子，然后等待计时器6下滴滴声响完最后一下，戳下屏幕进入游戏（你问我为啥不按A？因为按键是导电胶触发，可能会比戳屏幕稍微慢点）。</p>
+<p>接下来，继续游戏快速地按A过文本。需要注意的是，部分需要选择的文本是会改变Delay奇偶的。如下所示。</p>
+<ol>
+<li>选项1。这里请选择最后一个”だいじょうぶ!”，选择其他选项则会改变一次奇偶。<br><img src="/assets/post/003/004.png" alt="选项1" title="选项1"></li>
+<li>选项2，确认玩家性别。这里请选择”はい”，选择其他选项则会改变一次奇偶。<br><img src="/assets/post/003/005.png" alt="选项2" title="选项2"></li>
+<li>选项3，取名环节。每次按下SELECT切换输入，或者戳屏幕切换输入，都会改变一次奇偶（注意是切换一次变一次！），这个地方是我们的<code>关键点</code>，在这里完成奇偶变化的修正即可。<br><img src="/assets/post/003/006.png" alt="选项3" title="选项3"><blockquote>
+<p>DPPt还会多一个给劲敌取名的环节，和主角取名的环节是一样的，切换输入会改变奇偶，取完名选择否也会改变奇偶。</p>
+</blockquote>
+</li>
+<li>选项4，取完名后还会进行确认。这里请选择”はい”，选择其他选项则会改变一次奇偶。<br><img src="/assets/post/003/007.png" alt="选项4" title="选项4"></li>
+</ol>
+<blockquote>
+<p><strong>个人建议只在选项3的取名环节完成奇偶修正，其他选项每次操作都保证相同。</strong></p>
+</blockquote>
+<p>最后在该文本画面下再次等待计时器6下滴滴声响完最后一下按A进入存档<br><img src="/assets/post/003/008.png" alt="最终等待画面" title="最终等待画面"><br>之后就是查看训练家卡片上的表ID了(不过一般第一次都不会击中)<br><img src="/assets/post/003/009.png" alt="训练家卡片" title="训练家卡片"></p>
+<h4 id="第四步-修正延迟最后击中目标"><a href="#第四步-修正延迟最后击中目标" class="headerlink" title="第四步 修正延迟最后击中目标"></a>第四步 修正延迟最后击中目标</h4><p>回到IDs中，来到Seed Finder下<br><code>TID Obtained：</code>获得的表ID，填你刚才实际击中训练家卡片上的表ID<br><code>Date/Time：</code>日期时间，填入你所选的日期时间即可（Seed to Time上选的啥就填啥）<br><code>Min Delay：</code>最小Delay，将你所选的目标Delay-10（或更小）填入<br><code>Max Delay：</code>最大Delay，将你所选的目标Delay+10（或更大）填入<br>填写完参数点击Find(如果结果过多或没有可以尝试调整最小最大Delay的范围)</p>
+<p><img src="/assets/post/003/010.png" alt="反查结果" title="反查结果"></p>
+<p>我们只需要查看Delay和Seconds，如果反查结果是多个则一般选择离自己所选的Delay最近的那个当作实际击中的目标，同时查看Seconds是否对应了自己所选时间的秒数。  </p>
+<p>反查出的结果将Delay复制一下粘贴到EonTimer计时器中的Delay Hit然后点击Update（如果你的Seconds一直击中别的秒数，也可以考虑将你的目标秒数手动+-修正一下），这样就已经完成了一次修正延迟的操作了。</p>
+<blockquote>
+<p><strong>注意！如果你反查的Delay与你所选的目标Delay奇偶不同（即我目标是4000，反查发现击中4001），则有三种解决方法</strong></p>
+<ol>
+<li>将你所选的时间年份+-1（即换个奇/偶的年份）</li>
+<li>在前面说的选项里进行奇偶的调整</li>
+<li>在你机子的GBA卡槽插入一张三代正传卡带</li>
+</ol>
+</blockquote>
+<p>接下来继续第三步的尝试击中目标，如果还是没有击中目标则继续第四步修正延迟，如此反复，最后成功击中目标，获得你想要的ID。</p>
+</li>
+<li><h3 id="第二部分-定点-礼物宝可梦"><a href="#第二部分-定点-礼物宝可梦" class="headerlink" title="第二部分 定点/礼物宝可梦"></a>第二部分 定点/礼物宝可梦</h3><p>由于PokeFinder已经把所有定点/礼物宝可梦算法进行了集成，所以不需要我们选择算法了，只需要选择对应宝可梦即可。如果您使用的是RNGReporter请参考如下算法。(以下只指出可以出现闪光的宝可梦！)<br><strong>Method 1</strong><br>这个算法下的宝可梦是直接生成，不可以被同步、迷人之躯影响。<br><code>御三家：</code>包含所有赠送的御三家，即关东、成都、丰缘、神奥的御三家。<br><code>化石：</code>包含所有化石生成的宝可梦，共7只。<br><code>NPC赠送的宝可梦：</code>伊布、多边兽、玛瑙水母、迷你龙、无畏小子。<br><code>NPC赠送的宝可梦蛋：</code>波克比、利欧路、小福蛋、咩利羊、乌波、熔岩虫。<br><code>游戏机厅兑换的宝可梦：</code>魔墙人偶、伊布、多边兽、凯西、穿山鼠、阿伯蛇、迷你龙。<br><code>游走宝可梦：</code>艾姆利多、克雷色利亚、急冻鸟、闪电鸟、火焰鸟、雷公、炎帝、拉帝欧斯/拉帝亚斯。<br><code>心金魂银中赠送的DPPT三神兽：</code>帝牙卢卡、帕路奇亚、骑拉帝纳。<br><code>玛纳霏的蛋：</code>联动获得的蛋。<br><strong>Method J/K</strong><br>DPPt选择J，HGSS选择K，这个算法下的宝可梦是可以被同步、迷人之躯影响。<br><code>野生宝可梦：</code>所有野生宝可梦，在后续部分讲解。<br><code>定点普通宝可梦：</code>飘飘球、洛托姆、花岩怪、霹雳电球、小拳石、瓦斯弹、拉普拉斯、顽皮雷弹、卡比兽、树才怪。<br><code>定点神兽：</code>三神柱、蓝黄圣菇、神柱王、席多蓝恩、达克莱伊、谢米、所有封面神、非游走三圣鸟、超梦、水君、非游走拉帝欧斯/拉帝亚斯、丰缘三神。<br><strong>配信礼物</strong><br>这部分宝可梦个人认为没什么必要乱数，都锁闪只能乱数个体，不会被同步、迷人之躯影响。<br>领取地点是在城市的商店里，有的商店NPC过多会影响帧数，这里推荐NPC最少的城市，请在推荐的城市里进行领取乱数操作。<br>DPPt请在野原市，HGSS请在华蓝市或浅红市。</p>
+<hr>
+<ul>
+<li>PokeFinder请在Gen 4选项卡下打开Static</li>
+<li>RNG Reporter请在Time Finder下打开4th Generation Time Finder</li>
+</ul>
+<p><img src="/assets/post/003/011.png" alt="宝可梦生成Seed" title="宝可梦生成Seed"></p>
+<p>先点击Profile里的Manager，然后点New把自己的表里ID填入，选择游戏的版本，Profile Name随便填自己能认得出就行，如果获得全国图鉴了可以勾选National Dex（暂时不知道有什么影响）。添加完游戏信息后，回到Static选择对应的Profile。<br>接着点击Searcher选项卡<br><code>Min Delay：</code>最小Delay范围，只要你来得及填多小都可以，个人推荐600+。<br><code>Max Delay：</code>最大Delay范围，只要你愿意等填多大都可以，个人推荐6000。<br><code>Min Advance：</code>最小帧范围，一般是0（PokeFinder是从0开始算的，RNG Reporter则是从1开始），但是需要注意部分宝可梦获得的场景初始消耗帧并不是0！所以要按需设置，后面会讲解消耗帧不为0的部分。<br><code>Max Advance：</code>最大帧范围，只要你愿意过帧填多大都行，但是没有稳定过很多帧的方法，个人推荐最大300以内就差不多了（我一般填100）。<br><code>Settings：</code>这里是选择宝可梦的类型，选择对应即可。<br><code>Filters：</code>这是筛选选项卡，个体数值最大最小范围这里很明显了，Show Stats勾选则展示宝可梦数值（而不是个体）。<br><code>Ability：</code>特性，一般是填Any。<br><code>Gender：</code>性别。<br><code>Hidden Power：</code>觉醒之力的属性，一般是填Any，有需求的自行选择。<br><code>Shiny：</code>闪光，Star是普通闪，Square是方块闪。<br><code>Nature：</code>性格。</p>
+<blockquote>
+<p>最下面还有个IV Calculator这个是用来反查和校准的。选择对应游戏，其中Characteristic是宝可梦的个性，可以通过喂糖每次升级都Add row然后添加数值，最后点击Find IVs，回到Filters可以看到个体数值已经变动。</p>
+</blockquote>
+<p>一切参数设置完毕后点击Search开始搜索</p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>宝可梦第四世代乱数操作指南</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://haku76.github.io/posts/ace323ee/">http://haku76.github.io/posts/ace323ee/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>Hakuhiro</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-04-02</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2024-04-10</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AE%9D%E5%8F%AF%E6%A2%A6%E4%B9%B1%E6%95%B0/">宝可梦乱数</a><a class="post-meta__tags" href="/tags/PokemonRNG/">PokemonRNG</a><a class="post-meta__tags" href="/tags/%E5%AE%9D%E5%8F%AF%E6%A2%A6/">宝可梦</a><a class="post-meta__tags" href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/">随机数</a><a class="post-meta__tags" href="/tags/GEN4/">GEN4</a><a class="post-meta__tags" href="/tags/%E5%BF%83%E9%87%91%E9%AD%82%E9%93%B6/">心金魂银</a></div><div class="post_share"><div class="social-share" data-image="/assets/head.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js" defer></script></div></div><link rel="stylesheet" href="/css/coin.css" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">赞助</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/assets/QRCode/vx2.JPG" target="_blank"><img class="post-qr-code-img" src="/assets/QRCode/vx2.JPG" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/assets/QRCode/zfb.JPG" target="_blank"><img class="post-qr-code-img" src="/assets/QRCode/zfb.JPG" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></button></div><audio id="coinAudio" src="https://npm.elemecdn.com/akilar-candyassets@1.0.36/audio/aowu.m4a"></audio><script defer="defer" src="/js/coin.js"></script><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/6085f10a/" title="关于乱数的定义和看法"><img class="cover" src="/assets/post/002/1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">关于乱数的定义和看法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/6085f10a/" title="关于乱数的定义和看法"><img class="cover" src="/assets/post/002/1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-23</div><div class="title">关于乱数的定义和看法</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%E5%92%8C%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">前言和准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%E9%83%A8%E5%88%86"><span class="toc-number">1.1.</span> <span class="toc-text">前言部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">准备工作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-TID-SID-%E8%A1%A8%E9%87%8CID"><span class="toc-number">2.</span> <span class="toc-text">第一部分 TID&#x2F;SID (表里ID)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E8%8E%B7%E5%8F%96%E4%BD%A0%E6%83%B3%E8%A6%81ID%E7%9A%84Seed"><span class="toc-number">2.1.</span> <span class="toc-text">第一步 获取你想要ID的Seed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E8%8E%B7%E5%8F%96Seed%E7%9A%84%E7%94%9F%E6%88%90%E6%97%B6%E9%97%B4"><span class="toc-number">2.2.</span> <span class="toc-text">第二步 获取Seed的生成时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E5%B0%9D%E8%AF%95%E5%87%BB%E4%B8%AD%E7%9B%AE%E6%A0%87"><span class="toc-number">2.3.</span> <span class="toc-text">第三步 尝试击中目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E4%BF%AE%E6%AD%A3%E5%BB%B6%E8%BF%9F%E6%9C%80%E5%90%8E%E5%87%BB%E4%B8%AD%E7%9B%AE%E6%A0%87"><span class="toc-number">2.4.</span> <span class="toc-text">第四步 修正延迟最后击中目标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E5%AE%9A%E7%82%B9-%E7%A4%BC%E7%89%A9%E5%AE%9D%E5%8F%AF%E6%A2%A6"><span class="toc-number">3.</span> <span class="toc-text">第二部分 定点&#x2F;礼物宝可梦</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background: var(--default-bg)"><div id="footer-wrap"><div class="copyright">&copy;2024 By Hakuhiro</div><div class="footer_custom_text">如果本站对你有帮助还望多多投喂我QAQ</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button class="setting" type="button" title="博客设置" onclick="toggleWinbox();console.log(toggleWinbox);"><i class="fas fa-wand-magic-sparkles"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-gear fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button class="share" type="button" title="分享链接" onclick="share()"><i class="fas fa-share-nodes"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:rmf.searchinThisPage();"><i class="fas fa-search"></i><span>站内搜索</span></a><a class="rightMenu-item" href="#post-comment" onclick="rmf.yinyong()"><i class="fa-solid fa-message"></i><span>引用文本评论</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.click()"><i class="fa fa-arrows-alt"></i><span>全屏显示</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:toggleWinbox();"><i class="fas fa-wand-magic-sparkles"></i><span>博客设置</span></a><a class="rightMenu-item" href="javascript:fullScreen();"><i class="fas fa-expand"></i><span>进入全屏</span></a></div></div><html></html><body><div class="js-pjax" id="settingWindow"><span class="setting-title"> <span id="stt">控制面板</span><a id="close-console" onclick="toggleWinbox();">×</a></span><button id="backer" onclick="$('.asetting').hide();$('.settingx').show();$('#backer').hide()"><i class="fa fa-chevron-left"></i><span>返回</span></button><div class="settings"><div id="setting-buttons"><button class="settingx" onclick="$('#theme-settings').show();$('.settingx').hide();$('#backer').show();"><i class="fas fa-layer-group"></i><span>外观</span></button><button class="settingx" onclick="$('#font-settings').show();$('.settingx').hide();$('#backer').show();"><i class="fa fa-font"></i><span>字体</span></button><button class="settingx" onclick="$('#background-settings').show();$('.settingx').hide();$('#backer').show();"><i class="far fa-image"></i><span>背景</span></button><button class="settingx" onclick="$('#con-abouts').show();$('.settingx').hide();$('#backer').show();"><i class="fa fa-cloud-download"></i><span>关于</span></button></div><div id="setting-hides"><div class="asetting" id="theme-settings"><h2 class="content-head">性能设置</h2><p><div class="content" style="display:flex"><input id="blur" type="checkbox" onclick="setBlur()"/><div class="content-text">禁用模糊效果</div></div></p><p><h2 class="content-head">主题设置</h2><div class="content" style="display:flex"><input id="hideSakura" type="checkbox" onclick="toggleSakuras()"/><div class="content-text">落樱特效</div></div></p></div><div class="asetting" id="font-settings"><h2 class="content-head">字体设置</h2><p id="swfs"><a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'HYPailou'!important;color:black" onclick="setFont('HYPailou')">汉仪新蒂牌楼</a><br/><a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'FZXJLJ'!important;color:black" onclick="setFont('FZXJLJ')">方正金陵体</a><br/><a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'FZXS'!important;color:black" onclick="setFont('FZXS')">方正像素体</a><br/><a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'FZODZK'!important;color:black" onclick="setFont('FZODZK')">方正欧蝶正楷</a><br/><a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'Source Serif'!important;color:black" onclick="setFont('Source Serif')">思源宋体</a><br/><a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'Source Sans'!important;color:black" onclick="setFont('Source Sans')">思源黑体</a><br/><a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:-apple-system, IBM Plex Mono ,monosapce,'微软雅黑', sans-serif;" onclick="setFont('main')">系统默认</a><br/></p></div><div class="asetting" id="background-settings"><h2 style="margin-left:10px">背景设置</h2><div></div><button class="content-button" onclick="localStorage.removeItem('blogbg');location.reload();"><i class="fa-solid fa-arrows-rotate"></i><h2> 点我恢复默认背景</h2></button><h3>图片（手机）</h3><div class="bgbox"><a class="pimgbox" href="javascript:;" rel="noopener external nofollow" style="background-image:url(/assets/background/mobile/1.png)" onclick="changeBg('url(/assets/background/mobile/1.png)')"></a><a class="pimgbox" href="javascript:;" rel="noopener external nofollow" style="background-image:url(/assets/background/mobile/2.jpg)" onclick="changeBg('url(/assets/background/mobile/2.jpg)')"></a><a class="pimgbox" href="javascript:;" rel="noopener external nofollow" style="background-image:url(/assets/background/mobile/3.jpg)" onclick="changeBg('url(/assets/background/mobile/3.jpg)')"></a></div><h3>图片（电脑）</h3><div class="bgbox"><a class="imgbox" href="javascript:;" rel="noopener external nofollow" style="background-image:url(/assets/background/1.png)" onclick="changeBg('url(/assets/background/1.png)')"></a><a class="imgbox" href="javascript:;" rel="noopener external nofollow" style="background-image:url(/assets/background/2.png)" onclick="changeBg('url(/assets/background/2.png)')"></a><a class="imgbox" href="javascript:;" rel="noopener external nofollow" style="background-image:url(/assets/background/3.jpg)" onclick="changeBg('url(/assets/background/3.jpg)')"></a><a class="imgbox" href="javascript:;" rel="noopener external nofollow" style="background-image:url(/assets/background/4.jpg)" onclick="changeBg('url(/assets/background/4.jpg)')"></a><a class="imgbox" href="javascript:;" rel="noopener external nofollow" style="background-image:url(/assets/background/5.jpg)" onclick="changeBg('url(/assets/background/5.jpg)')"></a><a class="imgbox" href="javascript:;" rel="noopener external nofollow" style="background-image:url(/assets/background/6.jpg)" onclick="changeBg('url(/assets/background/6.jpg)')"></a></div><h3>渐变色</h3><div class="bgbox"><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: linear-gradient(to right, #eecda3, #ef629f)" onclick="changeBg('linear-gradient(to right, #eecda3, #ef629f)')"></a><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: linear-gradient(to right, #B7D31E, #42CE1E)" onclick="changeBg('linear-gradient(to right, #B7D31E, #42CE1E)')"></a><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: linear-gradient(to right, #06DE86, #06A5DE)" onclick="changeBg('linear-gradient(to right, #06DE86, #06A5DE)')"></a><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: linear-gradient(to right, #189BC4, #183DC4)" onclick="changeBg('linear-gradient(to right, #189BC4, #183DC4)')"></a><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: linear-gradient(to right, #C018C4, #C41818)" onclick="changeBg('linear-gradient(to right, #C018C4, #C41818)')"></a><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: linear-gradient(to right, #8B00BB, #030094)" onclick="changeBg('linear-gradient(to right, #8B00BB, #030094)')"></a></div><h3>纯色</h3><div class="bgbox"><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: #7D7098" onclick="changeBg('#7D7098')"></a><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: #FF7F50" onclick="changeBg('#FF7F50')"></a><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: #74C0FC" onclick="changeBg('#49A6E9')"></a><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: #F7CEFF" onclick="changeBg('#F7CEFF')"></a><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: #FFFFCE" onclick="changeBg('#FFFFCE')"></a><a class="box" href="javascript:;" rel="noopener external nofollow" style="background: #6CC154" onclick="changeBg('#6CC154')"></a></div></div><div class="asetting" id="con-abouts"><h1>关于</h1>Hexo-theme-Acryple v1.1.4<br/>Ariasaka Console v1.0<br/></div></div></div><div id="setting-sidesl"><button class="reSettings con-rightside" title="恢复默认设置"><i class="fa fa-repeat"></i></button><div id="setting-sides"><button class="con-rightside" title="昼夜切换" id="con-mode" onclick="switchDarkMode();"><i class="fa fa-adjust"></i></button><button class="con-rightside" title="阅读模式" id="con-reading" onclick="rmf.switchReadMode();"><i class="fa fa-book-open"></i></button><button class="con-rightside" title="单双栏切换" id="con-toggleaside" onclick="toggleAside();"><i class="fas fa-arrows-alt-h"></i></button><button class="con-rightside" title="全屏" id="con-fullscreen" onclick="fullScreen();"><i class="fas fa-expand"></i></button></div></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/6085f10a/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="/assets/post/002/1.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-03-23</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/6085f10a/&quot;);" href="javascript:void(0);" alt="">关于乱数的定义和看法</a><div class="blog-slider__text">关于乱数的定义和看法</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/6085f10a/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js" type="module"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><div class="js-pjax"></div><script src="/js/Key.js"></script><script type="text/javascript" src="https://gcore.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script><script src="/js/pace.js"></script><script src="/js/cat.js"></script><script type="text/javascript" src="/js/rightmenu.js"></script><script src="/js/console.js"></script><script type="text/javascript" src="/js/title.js"></script><script  type="text/javascript" src="/js/nav.js"></script><script src="/js/sakura.js"></script><script src="/js/cursor.js"></script><script src="/js/share.js"></script><script src="/js/sun_moon.js"></script><div class="aplayer no-destroy" data-id="7803928554" data-server="netease" data-type="playlist" data-listFolded="false" data-preload="metadata" data-theme="var(--lyx-theme)" data-fixed="true" data-autoplay="false" data-volume=0.1 style="z-index:514"> </div><script type="text/javascript" src="/js/aplayersave.js"></script><script src="/js/winbox.js"></script><script src="/js/setting.js"></script><script src="/js/hide.show.js"></script><script id="click-heart" src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="/css/APlayer.min.css" media="print" onload="this.media='all'"><script src="/js/APlayer.min.js"></script><script src="/js/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show","#web_bg",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
