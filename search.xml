@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>宝可梦第三世代乱数操作指南</title>
+      <link href="/posts/368f1053/"/>
+      <url>/posts/368f1053/</url>
+      
+        <content type="html"><![CDATA[<ul><li><h3 id="前言和准备工作"><a href="#前言和准备工作" class="headerlink" title="前言和准备工作"></a>前言和准备工作</h3><h4 id="前言部分"><a href="#前言部分" class="headerlink" title="前言部分"></a>前言部分</h4><div class="note danger simple"><p>本文章会涉及部分使用模拟器的操作！关于模拟器出现相关的问题，本文章不做解答！</p></div><ul><li><a href="/posts/6085f10a/" title="关于乱数的定义和看法">关于乱数更广泛的定义请阅读此文章</a></li><li>关于第三世代的Seed机制，火红叶绿、红蓝宝石、绿宝石是三种不同的生成机制，但都彼此相关联。关于初始Seed，火红叶绿是由RTC时钟生成的，红蓝宝石由内置时钟根据时间生成(无电池则为5A0)，绿宝石则始终为0。但实机上这三者的Seed都是有可控方法的，只是这些方法比较冷门或者是存在争议的…我们需要操作的<strong>第一个关键点</strong>就是获得目标的Seed。</li><li>接着是第三世代的帧机制，第三世代的帧是根据时间不停推进的，只不过不同场景下的帧推进速度不同，比如在宝可梦战斗下的帧推进速度大概是正常帧推进速度的两倍。而在游戏中，每一帧都对应一个随机数，因此宝可梦的生成也是和每一帧对应的。我们需要操作的<strong>第二个关键点</strong>就是推进到目标帧，然后触发事件。</li><li>本文章请搭配本人的实操视频教程食用，效果更佳<a href="https://www.bilibili.com/video/BV1wh4y1z7dc" title="B站视频链接">B站视频链接</a></li></ul><hr><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul><li>需要的软件有<ol><li>生成器 PokeFinder或RNGReporter</li><li>计时器 EonTimer3.0</li></ol></li><li>需要的硬件有<ol><li>机子分为这三大类:GBA系列、NDS或NDSL。</li><li>所有语言全版本<strong>正版</strong>的宝可梦三代游戏卡带，火红叶绿、红宝石蓝宝石绿宝石。</li></ol></li><li>其他<br>一些用来记录参数的工具，可以是Excel、记事本、计算器，甚至是纸和笔。</li></ul><p><strong>个人整理的软件包(侵权删)</strong> <a href="https://pan.baidu.com/s/1npBYmzV9GnvEWtHYKblqhg?pwd=HAKU" title="提取码HAKU">百度网盘</a></p></li><li><h3 id="第一部分-获得想要的Seed"><a href="#第一部分-获得想要的Seed" class="headerlink" title="第一部分 获得想要的Seed"></a>第一部分 获得想要的Seed</h3><div class="note danger simple"><p>这部分内容都是涉及模拟器的操作，不想看的可以跳过。</p></div><p>实机的相关操作参考<a href="https://willkyu.github.io/Pokemon/Strategies/In-Game/RNG/Pokemon-RNG-Abuse-Gen3-Part2/" title="丘丘的文章">丘丘的文章</a></p><ul><li>我们先需要查找想要的Seed，PokeFinder请在Gen 3 Tools选项卡下打开IVs to PID以及Seed to Time</li></ul><p><img src="/assets/post/004/001.png" alt="IVs to PID" title="IVs to PID"></p><p>先选择需要乱数的宝可梦的性格、个体值，这里的表ID(TID)因为我们还没开始获得，可以先填入你喜欢或想要乱数的ID。如果你以及拥有ID了那只能忽略这一步了，接着点击Find搜索。注意这里生成的组合都是闪光宝可梦的组合。<br>有可能会出现没有结果的情况，这很正常，毕竟不是所有个体都存在闪光组合的。我们需要观察这里的Method，请选择1、2、4，其他Method是别的算法生成机制(比如竞技场和暗之旋风)，其中1是定点、礼物，2、4是野生宝可梦。关于Method1、2、4具体可以参考<a href="https://willkyu.github.io/Pokemon/Strategies/In-Game/RNG/Pokemon-RNG-Abuse-Gen3-Part1/" title="丘丘的文章">丘丘的文章</a>。最后是里ID(SID)，我们如果想要获得这个Seed必须拥有这里的表里ID组合。点击Seed然后Ctrl+C复制。<br>如果你已经拥有存档了但仍然想要乱一些高个体闪光的宝可梦，请在PokeFinder里的Gen 3选项卡下打开Static(或者Wild)，先点击Manager填入你的角色信息，然后来到Searcher选项卡下，选择对应Method和宝可梦，筛选个体、性格等能力属性、是否闪光，然后点击Search，就会出现对应宝可梦的Seed(也有可能没有结果，这很正常，说明你的表里ID组合生成的Seed不存在生成这只宝可梦)。点击Seed然后Ctrl+C复制，或者直接右击Seed选择Generate times for seed。</p><p><img src="/assets/post/004/002.png" alt="Searcher" title="Searcher"></p><p>接下来来到Seed to Time</p><p><img src="/assets/post/004/003.png" alt="Seed to Time" title="Seed to Time"></p><p>将Seed粘贴到16/32-Bit Seed，随便选择一个年份，然后点击Find之后，就会生成时间，并且刚才填入的Seed会转为四位的Seed，这个四位的Seed才是我们真正需要的Seed。</p><p><strong>那么接下来该如何获得这个Seed呢？</strong><br>前言提到了Seed的生成机制，火红叶绿是RTC时钟随机生成(看似不可控)，红蓝宝石电池有电根据时间生成(看似可控，但是应该很麻烦？)，绿宝石则始终为0。既然这些Seed看起来根本不可能控制获得，那么接下来怎么办？只能让最终手段模拟器+Lua脚本出场了。</p><ul><li>火红叶绿使用模拟器，并且搭配Seed Bot的Lua脚本，可以实现所有Seed的获取(无脑挂机刷)</li><li>红蓝宝石使用模拟器，直接打开模拟时钟，然后设置电脑时间进入游戏，就可以实现所有Seed获取了。</li><li>那么绿宝石呢？始终为0如何解决呢？<br>接下来我要提到一个三代宝石<del>鲜为人知</del>的Seed生成机制了</li></ul><blockquote><p><strong>绘画Seed</strong><br>  首先这个机制只适用于红蓝宝石和绿宝石。<br>  通过查看水静市华丽大赛的绘画，可以改变Seed，这个改变的Seed的生成是根据帧数来决定的，例如：从打开游戏开始记为0帧，我在8000帧查看绘画，则Seed会改变为1F5E(即十进制8000+30转为十六进制)，为什么还会有个30呢，因为按下A看画的过程大概有30帧。所以我们需要先将目标Seed转为十进制的帧数然后-30来击中目标。<br>  以上讲解了这个机制，说明绘画Seed是可以在实机下操控的，但还需要搭配战斗录像使用，实机操作的难度会飙升。</p></blockquote><p>好了，理论部分讲解完了，上模拟器和脚本。</p><p>先是模拟器自带的显示帧数，勾选如图所示的选项即可显示，它的优点是开关方便，但缺点就是它并不完全准确。</p><p><img src="/assets/post/004/004.png" alt="显示帧数" title="显示帧数"></p><p>通过查看内存数值来查看火红叶绿的Seed，先打开Tools &gt; Debug &gt; Memory viewer</p><p>接着游戏推进到选存档的界面，搜索框填入02020000然后点击Go，从左边起的四位就是本次游戏的Seed(即图中E57B)。</p><p><img src="/assets/post/004/005.png" alt="查看内存Seed" title="查看内存"></p><p>最后是通过Lua脚本来查看Seed和帧数，脚本一般是直接通过获取内存地址来查看相关的数值，所以是比较准确的。<br>先打开Tools &gt; Lua Scripting &gt; New Lua Script Window…</p><p><img src="/assets/post/004/006.png" alt="打开Lua" title="打开Lua"></p><p><code>Browse:</code>打开脚本<br><code>Edit:</code>编辑脚本<br><code>Stop:</code>停止脚本<br><code>Run:</code>启动脚本。先打开脚本才能启动，启动后会变成Restart重启。</p><blockquote><p>请注意！如果模拟器打不开脚本则是缺少Lua模块，请下载我网盘里的模拟器。如果编辑不了，请选择Lua文件的打开方式为记事本。脚本请务必正确选择对应游戏版本。</p></blockquote><p><strong>以下进行一些脚本使用方法的讲解</strong><br>绘画Seed</p><p>刚启动脚本后只是如图所示什么都没有，但是顶部显示了←1 - 2→。这告诉我们只需要按数字1、2即可切换该脚本的模式。</p><p><img src="/assets/post/004/007.png" alt="绘画Seed" title="绘画Seed"></p><p>这里按下1切换到宝可梦信息的模式，这个模式下还可以按下3456来切换一些信息，可以自行摸索一下。</p><p><strong>注意左下角的参数</strong></p><p><code>Initial Seed:</code>初始Seed，并不是固定为0的，Seed改变时这个参数也会改变。<br><code>Painting Timer:</code>绘画Seed，就是当前帧会生成的绘画Seed。<br><code>Battle Video Seed:</code>对战录像的Seed<br><code>Current Seed:</code>我不知道这是啥，但是好像用处不是很大。<br><code>Advances:</code>当前帧数</p><p><img src="/assets/post/004/008.png" alt="绘画Seed" title="绘画Seed"></p><p>现在我们已经知道绘画Seed的生成时机了，进入到水静市华丽大赛大厅，在特定的帧数下查看绘画，即可获得目标Seed。</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 宝可梦乱数 </tag>
+            
+            <tag> PokemonRNG </tag>
+            
+            <tag> 宝可梦 </tag>
+            
+            <tag> 随机数 </tag>
+            
+            <tag> GEN3 </tag>
+            
+            <tag> 火红叶绿 </tag>
+            
+            <tag> 红宝石/蓝宝石 </tag>
+            
+            <tag> 绿宝石 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>宝可梦第四世代乱数操作指南</title>
       <link href="/posts/ace323ee/"/>
       <url>/posts/ace323ee/</url>
